@@ -1,0 +1,153 @@
+.post-feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .post {
+    width: 50%;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex; /* Display posts as rows */
+    align-items: flex-start; /* Align items at the top */
+    transition: transform 0.2s ease; /* Add a smooth transition effect */
+  }
+  
+  .post:hover {
+    transform: scale(1.01); /* Scale up the post when hovered */
+    background-color: RGB(245, 245, 245);
+  }
+  
+  .profile-image {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+  }
+  
+  .post-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post-title-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post-title-section h2 {
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+  }
+  
+  .post-details {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .post-content-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .add-post-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none; /* Remove background color */
+    border: none;
+    color: rgb(228, 107, 15);/* Text color for the button (blue, similar to social media apps) */
+    font-size: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Add a smooth color transition on hover */
+  }
+  
+  .add-post-button span {
+    font-size: 40px; /* Size of the plus sign */
+  }
+  
+  .add-post-button:hover {
+    color: gray; /* Text color on hover (slightly darker blue) */
+  }
+  
+  /* CSS for the dropdown menu */
+
+/* CSS for the dropdown button */
+.post-options {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: transparent; /* Remove the background color */
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 20px; /* Adjust the size as needed */
+  color: #333; /* Adjust the color as needed */
+}
+
+.dropdown-button:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+/* CSS for the dropdown menu */
+/* CSS for the dropdown menu */
+/* CSS for the dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  font-family: 'Arial', sans-serif; /* Change to your preferred font-family */
+
+  /* Additional styles for the text in the dropdown menu */
+  color: #333; /* Adjust the color as needed */
+  font-size: 14px; /* Adjust the font size as needed */
+  line-height: 1.6; /* Adjust the line height for better readability */
+
+  /* Adjust the height and padding for each option */
+  padding: 5px 15px; /* Adjust the padding to reduce height and make corners less sharp */
+  border-radius: 5px; /* Adjust the border-radius to make corners less sharp */
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s ease; /* Add a smooth hover effect */
+}
+
+.dropdown-menu a:hover {
+  background-color: #007bff; /* Change the background color on hover */
+  color: #fff; /* Change the text color on hover */
+}
+
+
+.open {
+  display: block;
+}
+
+/* CSS for the custom "More" icon */
+.more-icon {
+  font-size: 18px;
+  line-height: 1;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+/* Rest of your CSS styles */
+/* ... */
+
+  
+  
+  
+  
+
+  

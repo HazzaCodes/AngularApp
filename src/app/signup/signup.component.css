@@ -1,0 +1,61 @@
+/* Common styles for both login and sign-up forms */
+.lf, .sf {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh;
+  background: #fff; /* Background color */
+}
+/* Specific styles for the sign-up form */
+.signup-form {
+  width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 20px;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  border-bottom: 0.5px solid gray;
+  line-height: 2;
+}
+.signup-input {
+  font-size: 12px;
+  width: 100%;
+  max-width: 100%; /* Add this rule to set the maximum width */
+  box-sizing: border-box;
+  background: #f6f6f6;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 10px 0;
+  color: #000;
+}
+
+.signup-input::placeholder {
+  color: #777; /* Placeholder text color */
+}
+
+.signup-input:focus {
+  background: #fff;
+}
+
+.signup-button {
+  width: 100%;
+  background: #ff4500; /* Reddit's upvote color */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 50px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.signup-button:hover {
+  background: #ff5722; /* Slightly darker color on hover */
+}

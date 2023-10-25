@@ -1,0 +1,23 @@
+<header>
+  <div class="logo-div">    
+    <img src="../../assets/images/reddit_logo.webp" width="159" height="53" alt="Your Image Alt Text">
+  </div>
+</header>
+
+<div class="sf">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
+    <div class="form-group">
+      <input type="email" id="email" formControlName="email" class="signup-input" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <input type="text" id="username" formControlName="username" class="signup-input" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <input type="password" id="password" formControlName="password" class="signup-input" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <input type="password" id="confirmPassword" formControlName="confirmPassword" class="signup-input" placeholder="Confirm Password">
+    </div>
+    <button type="submit" [disabled]="signupForm.invalid" class="signup-button">Sign Up</button>
+  </form>
+</div>

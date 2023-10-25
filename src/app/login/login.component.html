@@ -1,0 +1,20 @@
+<header class="login-header">
+  <div class="logo-div">    
+    <img src="../../assets/images/reddit_logo.webp" width="150" height="50" alt="Your Image Alt Text">
+  </div>
+</header>
+
+<div class="lf">
+  <form id="form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <input class="form-group" type="text" id="username" formControlName="username" placeholder="Username">
+    <input class="form-group" type="password" id="password" formControlName="password" placeholder="Password">
+
+    <div id="singup">
+      <p>New to Reddit?</p>
+      <span class="signup">
+        <a href="http://localhost:4200/signup" target="blank"><p>Sign up</p></a>
+      </span>
+    </div>
+    <button class="form-group" type="submit" class="reddit-button" [disabled]="!loginForm.valid">Log In</button>
+  </form>
+</div>

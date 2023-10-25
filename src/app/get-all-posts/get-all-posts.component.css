@@ -1,0 +1,172 @@
+.post-feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post {
+  display: flex;
+  align-items: flex-start;
+  width: 50%;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: transform 0.2s ease;
+  position: relative; /* Make the post container a positioning context */
+}
+
+.post:hover {
+  transform: scale(1.01);
+  background-color: #f5f5f5;
+}
+
+.profile-image {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+.post-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+.post-details {
+  font-size: 12px;
+  color: #777;
+}
+
+.post-options {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1; /* Ensure it appears above other content */
+}
+
+.login-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f0f0; /* Background color for the header */
+  color: #fff; /* Text color for the header */
+}
+
+/* Adjust the top-right-buttons for proper spacing */
+.top-right-buttons {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Move the buttons to the right */
+}
+
+.logo-div {
+  display: flex;
+  align-items: center;
+}
+
+.logo-div img {
+  width: 150px;
+  height: 50px;
+}
+
+.top-right-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.logout-button,
+.myposts-button {
+  background: none;
+  border: none;
+  color: rgb(111, 110, 110);
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-left: 10px;
+}
+
+.logout-button i,
+.myposts-button i {
+  margin-right: 5px;
+}
+
+.logout-button:hover,
+.myposts-button:hover {
+  color: #ccc; /* Change color on hover */
+}
+
+.comment-button {
+  background: rgba(97, 96, 96, 0.4);
+  color: #fff;
+  border: none;
+  border-radius: 50%; /* To make it a circular button */
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.comment-button i {
+  line-height: 40px; /* Center the icon vertically */
+}
+
+.comment-button:hover {
+  background: orangered; /* Change the background color on hover */
+}
+.search-bar {
+  display: flex;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  min-width: 250px;
+  max-width: 500px;
+}
+
+/* Search input field */
+.search-bar input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 13px;
+  outline: none;
+}
+
+/* Search button */
+.search-bar button {
+  background: rgb(85, 85, 85);
+  border: none;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Style the search button on hover */
+.search-bar button:hover {
+  background: orangered;
+}
+
+
+
+
+
+
+

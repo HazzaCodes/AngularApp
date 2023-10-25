@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<div class="post-feed">
+  <div class="post" *ngFor="let post of posts">
+    <div class="profile-image">
+      <img src="../../assets/images/male_avatar.png" height="30" width="30" alt="Profile Image">
+    </div>
+    <div class="post-content">
+      <div class="post-title-section">
+        <h2>{{ post.title }}</h2>
+        <p class="post-details">Posted on {{ post.datePosted | date: 'medium' }}</p>
+      </div>
+      <p class="post-content-text">{{ post.content }}</p>
+    </div>
+    <div class="post-options">
+      <!-- Add a button to open/close the dropdown menu -->
+      <button class="dropdown-button" (click)="toggleDropdown(post.id)">
+        <i class="fas fa-ellipsis-v"></i>
+      </button>
+      <!-- Dropdown menu options -->
+      <div class="dropdown-menu" [ngClass]="{ 'open': isDropdownOpen[post.id] }">
+        <a (click)="onEditPostClick(post)">Edit</a>
+        <a (click)="onDeletePostClick(post)">Delete</a>
+      </div>
+    </div>
+  </div>
+  
+  <button class="add-post-button" (click)="onAddPostClick()">
+    <span>+</span> Add Post
+  </button>
+</div>
