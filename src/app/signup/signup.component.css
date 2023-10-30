@@ -19,7 +19,7 @@
 .signup-input {
   font-size: 12px;
   width: 100%;
-  max-width: 100%; /* Add this rule to set the maximum width */
+  max-width: 100%; 
   box-sizing: border-box;
   background: #f6f6f6;
   height: 50px;

@@ -1,25 +1,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <header>
   <div class="logo-div">
-    <!-- Logo image -->
     <img src="../../assets/images/reddit_logo.webp" width="150" height="50" alt="Your Image Alt Text" />
   </div>
   <div class = "username">
     @{{username}}
   </div>
   <div class="top-right-buttons">
-    <!-- Search bar with the same style as the buttons -->
     <div class="search-bar">
       <input type="text" placeholder="Search." />
       <button>
         <i class="fas fa-search"></i>
       </button>
     </div>
-    <!-- Button for viewing your posts -->
     <button class="explore-button" (click)="explorePosts()">
       <i class="fas fa-list"></i> Explore
     </button>
-    <!-- Button for logging out -->
     <button class="logout-button" (click)="logout()">
       <i class="fas fa-sign-out-alt"></i> Logout
     </button>
