@@ -31,7 +31,6 @@ export class EditPostComponent {
   }
   
   ngOnInit() {
-    this.userService.setPreviousRoute('/edit-post')
     this.route.params.subscribe((params) => {
       this.postId = +params['id'];
       if (isNaN(this.postId)) {

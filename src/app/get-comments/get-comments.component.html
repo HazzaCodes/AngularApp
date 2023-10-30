@@ -1,0 +1,17 @@
+<!-- post-comments.component.html -->
+<div *ngIf="post">
+  <h2>{{ post.title }}</h2>
+  <p>{{ post.body }}</p>
+</div>
+
+<div *ngIf="comments">
+  <h3>Comments</h3>
+  <ul>
+    <li *ngFor="let comment of comments">{{ comment.body }}</li>
+  </ul>
+</div>
+<form (ngSubmit)="addComment()">
+  <label for="comment">Add a comment:</label>
+  <input type="text" id="comment" name="comment" [value]="newComment" (input)="onInputChange($event)">
+  <button type="submit">Submit</button>
+</form>

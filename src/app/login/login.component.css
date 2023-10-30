@@ -1,3 +1,17 @@
+.signup-button {
+  background: none;
+  border: none;
+  margin-left: 5px;
+  font-size: 12px;
+  margin-bottom: 11px;
+  text-decoration: underline; /* Add underline to mimic a link appearance */
+  cursor: pointer; /* Change the cursor to a pointer on hover for interactivity */
+  padding: 0; /* Remove any padding or margin to make it more like plain text */
+}
+.signup-button:hover {
+  color:#005596;
+}
+
 .lf {
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -5,14 +19,17 @@
   height: 100vh;
 }
 
-.login-header {
-  width: 100%;
+header {
   display: flex;
-  border-bottom: 1px solid gray;
-  line-height: 2;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+  background-color: #f0f0f0; /* Background color for the header */
+  color: #fff; /* Text color for the header */
 }
 
-#singup {
+#signup {
   display: flex;
   align-items: center; /* Optional: Align text and link vertically */
 }
@@ -87,5 +104,12 @@ p {
 .reddit-heading {
   color: #0079D3;
 }
+
+
+
+
+
+
+
 
 

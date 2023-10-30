@@ -1,3 +1,82 @@
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+  margin-bottom: 50px;
+  background-color: #f0f0f0; /* Background color for the header */
+  color: #fff; /* Text color for the header */
+}
+
+
+.logout-button,
+.explore-button {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: none;
+  border: none;
+  color: rgb(60, 60, 60);
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-left: 10px;
+}
+
+
+.logo-div {
+  margin-right: -350px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-div img {
+  width: 150px;
+  height: 50px;
+}
+
+.top-right-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  min-width: 250px;
+  max-width: 500px;
+}
+
+/* Search input field */
+.search-bar input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 13px;
+  outline: none;
+}
+
+/* Search button */
+.search-bar button {
+  background: rgb(85, 85, 85);
+  border: none;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Style the search button on hover */
+.search-bar button:hover {
+  background: orangered;
+}
+
+
+
+
 .post-feed {
     display: flex;
     flex-direction: column;
@@ -24,15 +103,21 @@
   .profile-image {
     max-width: 50px;
     max-height: 50px;
-    margin-right: 10px;
+    margin-right: 5px;
   }
   
+  .username {
+    color: gray;
+    font-size: 16px;
+    margin-top: 5px;
+  }
   .post-content {
-    width: 100%;
+    margin-left: -60px;
+    flex: 1;
     display: flex;
+    margin-top: 40px;
     flex-direction: column;
   }
-  
   .post-title-section {
     display: flex;
     flex-direction: column;
@@ -104,6 +189,7 @@
   position: absolute;
   background-color: #f9f9f9;
   min-width: 100px;
+  max-width: 200px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
   font-family: 'Arial', sans-serif; /* Change to your preferred font-family */
@@ -140,6 +226,13 @@
   line-height: 1;
   vertical-align: middle;
   font-weight: bold;
+}
+
+.username {
+  margin-bottom: 5px;
+  color: gray;
+  font-size: 18px;
+  margin-left: 20px;
 }
 
 /* Rest of your CSS styles */

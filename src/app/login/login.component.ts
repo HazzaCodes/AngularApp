@@ -30,7 +30,8 @@ export class LoginComponent {
           console.log("User token: ", response.data)
           // You can handle a successful login, such as setting user credentials or redirecting the user.
           this.userService.storeToken(response.data);
-          this.router.navigate(["/get-all-posts"]);
+          this.userService.storeUsername(username);
+          this.router.navigate([`/get-all-posts`]);
 
         },
         (error) => {
@@ -41,5 +42,8 @@ export class LoginComponent {
     } else {
       console.log('Form is invalid. Please fix the errors.');
     }
+  }
+  onSignup() {
+    this.router.navigate(['/signup']);
   }
 }

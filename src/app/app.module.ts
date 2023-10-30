@@ -12,9 +12,12 @@ import { GetPostComponent } from './get-post/get-post.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { GetAllPostsComponent } from './get-all-posts/get-all-posts.component';
+import { GetCommentsComponent } from './get-comments/get-comments.component';
+import { AddCommentComponent } from './add-comment/add-comment.component';
+import { SignupFailedModalComponent } from './signup-failed-modal/signup-failed-modal.component'; 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SignupComponent, GetPostComponent, AddPostComponent,GetAllPostsComponent],
+  declarations: [AppComponent, LoginComponent, SignupComponent, GetPostComponent, AddPostComponent,GetAllPostsComponent, EditPostComponent, GetCommentsComponent, AddCommentComponent, SignupFailedModalComponent],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule], // Include ReactiveFormsModule
   providers: [
     {

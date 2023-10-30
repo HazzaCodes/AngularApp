@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../Services/post.service';
 import { UserService } from '../Services/user.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 
 
@@ -12,20 +12,19 @@ import { DatePipe } from '@angular/common';
   )
 export class GetAllPostsComponent implements OnInit {
   posts: any[] = [];
+  username: string = ""
   isDropdownOpen: { [key: number]: boolean } = {};
-  editedPostId: number = -1;
 
 
-  constructor(private postService: PostService, private userService: UserService, private router: Router) 
+  constructor(private postService: PostService, private userService: UserService, private router: Router, private route: ActivatedRoute) 
   {}
 
-
-
   ngOnInit() {
+    this.username = this.userService.getUsername() + "";
     this.loadPosts();
-    this.userService.setPreviousRoute('get-all-posts');
   }
 
+  
   loadPosts() {
     this.postService.getAllPosts(this.userService.getToken()!).subscribe(
       (response) => {
@@ -52,16 +51,18 @@ export class GetAllPostsComponent implements OnInit {
   }
   viewMyPosts()
  {
-
+  this.router.navigate([`/get-posts`]);
  }
 
- openCommentDialog()
- {} 
  logout() {
-
+  this.userService.clearAuthentication();
+  this.router.navigate(['/login']);
  }
 
+selectedPost: any; // Define a property to store the selected post
 
-
-
+openCommentDialog(post: any) {
+  console.log(post);
+  this.router.navigate([`/add-comment/${post.id}`]);
+}
 }

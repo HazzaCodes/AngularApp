@@ -1,55 +1,68 @@
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-/>
-
-<header class="login-header">
-  <div class="logo-div">
-    <!-- Logo image -->
-    <img src="../../assets/images/reddit_logo.webp" width="150" height="50" alt="Your Image Alt Text" />
-  </div>
-  <div class="top-right-buttons">
-    <!-- Search bar with the same style as the buttons -->
-    <div class="search-bar">
-      <input type="text" placeholder="Search..." />
-      <button>
-        <i class="fas fa-search"></i>
-      </button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
+  <!-- Add any other CSS links or scripts you need -->
+</head>
+<body>
+  <header class="login-header">
+    <div class="logo-div">
+      <!-- Logo image -->
+      <img src="../../assets/images/reddit_logo.webp" width="150" height="50" alt="Your Image Alt Text" />
     </div>
-    <!-- Button for viewing your posts -->
-    <button class="myposts-button" (click)="viewMyPosts()">
-      <i class="fas fa-list"></i> My Posts
-    </button>
-    <!-- Button for logging out -->
-    <button class="logout-button" (click)="logout()">
-      <i class="fas fa-sign-out-alt"></i> Logout
-    </button>
-  </div>
-</header>
-
-<div class="post-feed">
-  <div class="post" *ngFor="let post of posts">
-    <div class="profile-image">
-      <img
-        src="../../assets/images/male_avatar.png"
-        height="30"
-        width="30"
-        alt="Profile Image"
-      />
+    <div class = "username">
+      @{{username}}
     </div>
-    <div class="post-content">
-      <div class="post-title-section">
-        <h2>{{ post.title }}</h2>
-        <p class="post-details">Posted on {{ post.datePosted | date: 'short' }}</p>
-
+    <div class="top-right-buttons">
+      <!-- Search bar with the same style as the buttons -->
+      <div class="search-bar">
+        <input type="text" placeholder="Search." />
+        <button>
+          <i class="fas fa-search"></i>
+        </button>
       </div>
-      <p class="post-content-text">{{ post.content }}</p>
-    </div>
-    <div class="post-options">
-      
-      <button class="comment-button" (click)="openCommentDialog()">
-        <i class="far fa-comment"></i> <!-- You can use the 'far' class for a regular comment icon -->
+      <!-- Button for viewing your posts -->
+      <button class="myposts-button" (click)="viewMyPosts()">
+        <i class="fas fa-list"></i> My Posts
+      </button>
+      <!-- Button for logging out -->
+      <button class="logout-button" (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i> Logout
       </button>
     </div>
+  </header>
+
+  <div class="post-feed">
+    <div class="post" *ngFor="let post of posts">
+
+      <div class="profile-image">
+        <img src="../../assets/images/male_avatar.png" height="30" width="30" alt="Profile Image" />
+      </div>
+      <div class = "commenter">
+        <p class = "commenter-text"> @{{post.postedBy}}</p>
+      </div>
+      <div class="post-content">
+        <div class="post-title-section">
+          <h2>{{ post.title }}</h2>
+          <p class="post-details">Posted on {{ post.datePosted | date: 'short' }}</p>
+        </div>
+        <p class="post-content-text">{{ post.content }}</p>
+      </div>
+      <div class="post-options">
+        <button class="comment-button" (click)="openCommentDialog(post)">
+          <i class="far fa-comment"></i>
+        </button>
+      </div>
+    </div>
   </div>
-</div>
+
+
+  <!-- Add any other HTML elements, scripts, or links as needed -->
+
+</body>
+</html>

@@ -14,6 +14,7 @@ export class UserService {
   private apiUrl = 'http://localhost:5029/api/Auth/Register'; // Update this URL to match your API endpoint
   private token: string = "";
   private route: string = "";
+  private username: string = "";
 
   constructor(private http: HttpClient) {}
 
@@ -35,6 +36,14 @@ export class UserService {
   storeToken(token: string): void {
     this.token = token;
     localStorage.setItem('jwtToken', token);
+  }
+
+  storeUsername(username: string) {
+    this.username = username;
+    localStorage.setItem("username", username);
+  }
+  getUsername() {
+    return localStorage.getItem('username');
   }
 
 

@@ -22,11 +22,9 @@ export class AppComponent implements OnInit {
     //   } else {
     //     this.router.navigate(['/login']); // Replace 'dashboard' with your default route
     //   }
-    if (this.userService.getPreviousRoute() != null && this.userService.getToken() != '') {
-    this.router.navigate([this.userService.getPreviousRoute()]);
-    }
+
   
-      // this.router.navigate(['/login'])
+        this.router.navigate(['/login'])
     
   }
   

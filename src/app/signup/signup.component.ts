@@ -10,6 +10,8 @@ import { UserService } from '../Services/user.service';
 })
 export class SignupComponent {
   signupForm: FormGroup;
+  isSignupFailed: boolean = false; // Flag to control modal display
+
 
   constructor(private fb: FormBuilder, private userService: UserService) {
     this.signupForm = this.fb.group({
@@ -35,7 +37,6 @@ export class SignupComponent {
         .subscribe(
           (response) => {
             console.log(response.success)
-            // Handle a successful response here, e.g., redirect or show a success message.
 
           },
           (error) => {
@@ -45,7 +46,12 @@ export class SignupComponent {
           }
         );
     } else {
+      this.isSignupFailed = true; 
+
       console.log('Form is invalid. Please fix the errors.');
     }
+  }
+  closeModal() {
+    this.isSignupFailed = false; // Hide the modal
   }
 }

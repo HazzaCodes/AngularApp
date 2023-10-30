@@ -9,11 +9,12 @@
     <input class="form-group" type="text" id="username" formControlName="username" placeholder="Username">
     <input class="form-group" type="password" id="password" formControlName="password" placeholder="Password">
 
-    <div id="singup">
-      <p>New to Reddit?</p>
-      <span class="signup">
-        <a href="http://localhost:4200/signup" target="blank"><p>Sign up</p></a>
-      </span>
+    <div id="signup">
+      <div>
+        <p>New to Reddit?</p>
+      </div>
+      <button class="signup-button" (click) = "onSignup()">Sign up</button>
+
     </div>
     <button class="form-group" type="submit" class="reddit-button" [disabled]="!loginForm.valid">Log In</button>
   </form>

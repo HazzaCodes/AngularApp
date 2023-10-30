@@ -5,6 +5,7 @@
 </header>
 
 <div class="sf">
+  
   <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
     <div class="form-group">
       <input type="email" id="email" formControlName="email" class="signup-input" placeholder="Email">
@@ -19,5 +20,8 @@
       <input type="password" id="confirmPassword" formControlName="confirmPassword" class="signup-input" placeholder="Confirm Password">
     </div>
     <button type="submit" [disabled]="signupForm.invalid" class="signup-button">Sign Up</button>
+    <div *ngIf="isSignupFailed">
+      <app-signup-failed-modal (closeModal)="closeModal()"></app-signup-failed-modal>
+    </div>
   </form>
 </div>

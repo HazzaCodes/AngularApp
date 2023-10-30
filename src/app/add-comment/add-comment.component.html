@@ -1,0 +1,54 @@
+<html>
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Add any other CSS links or scripts you need -->
+  </head>
+  <body>
+    <div class="exit-button" (click)="onExitButtonClick()">
+      <i class="fas fa-times"></i>
+    </div>
+    
+    <div class="add-comment-section">
+      <div class="comment-section-container">
+        <div class="comment-section">
+          <div *ngFor="let comment of comments" class="comment">
+            <div class="commenter-info">
+              <img
+                src="../../assets/images/male_avatar.png"
+                height="30"
+                width="30"
+                alt="Profile Image"
+              />
+              <span class="commenter-name"
+                ><p>@{{ comment.commenter }}</p></span
+              >
+            </div>
+            <div class="comment-content">{{ comment.content }}</div>
+            <div class="date-posted">
+              <p>{{ comment.dateCommented | date : "short" }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comment-input">
+        <div class="comment-input-container">
+          <input type="text" placeholder="Add a comment..." #commentInput class="comment-input-box" />
+          <button (click)="onAddComment(commentInput.value)" class="comment-submit-button">Comment</button>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

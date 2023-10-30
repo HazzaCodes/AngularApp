@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../Services/post.service';
 import { UserService } from '../Services/user.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-get-post',
@@ -12,14 +12,15 @@ export class GetPostComponent implements OnInit {
   posts: any[] = [];
   isDropdownOpen: { [key: number]: boolean } = {};
   editedPostId: number = -1;
+  username: string = ""
 
 
-  constructor(private postService: PostService, private userService: UserService, private router: Router) 
+  constructor(private postService: PostService, private userService: UserService, private router: Router, private route: ActivatedRoute) 
   {}
 
   ngOnInit() {
     this.loadPosts();
-    this.userService.setPreviousRoute('get-posts');
+    this.username = this.userService.getUsername()+"";
   }
 
   loadPosts() {
@@ -60,6 +61,16 @@ export class GetPostComponent implements OnInit {
   toggleDropdown(postId: number) {
     // Toggle the dropdown for the specified post ID
     this.isDropdownOpen[postId] = !this.isDropdownOpen[postId];
+  }
+  logout() {
+    this.userService.clearAuthentication();
+    this.router.navigate(['/login']);
+   }
+   explorePosts() {
+    this.router.navigate(['/get-all-posts']);
+   }
+   onViewCommentClick(post: any) {
+    this.router.navigate([`/add-comment/${post.id}`]);
   }
 
 
