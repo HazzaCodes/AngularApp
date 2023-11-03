@@ -14,10 +14,11 @@ import { EditPostComponent } from './edit-post/edit-post.component';
 import { GetAllPostsComponent } from './get-all-posts/get-all-posts.component';
 import { GetCommentsComponent } from './get-comments/get-comments.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
-import { SignupFailedModalComponent } from './signup-failed-modal/signup-failed-modal.component'; 
+import { SignupFailedModalComponent } from './signup-failed-modal/signup-failed-modal.component';
+import { FilteredPostsComponent } from './filtered-posts/filtered-posts.component'; 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SignupComponent, GetPostComponent, AddPostComponent,GetAllPostsComponent, EditPostComponent, GetCommentsComponent, AddCommentComponent, SignupFailedModalComponent],
+  declarations: [AppComponent, LoginComponent, SignupComponent, GetPostComponent, AddPostComponent,GetAllPostsComponent, EditPostComponent, GetCommentsComponent, AddCommentComponent, SignupFailedModalComponent, FilteredPostsComponent],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule], // Include ReactiveFormsModule
   providers: [
     {

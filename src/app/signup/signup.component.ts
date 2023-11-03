@@ -11,6 +11,7 @@ import { UserService } from '../Services/user.service';
 export class SignupComponent {
   signupForm: FormGroup;
   isSignupFailed: boolean = false; // Flag to control modal display
+  statusMessage: string = "";
 
 
   constructor(private fb: FormBuilder, private userService: UserService) {
@@ -29,24 +30,29 @@ export class SignupComponent {
 
       const username = this.signupForm.get("username")?.value;
       const password = this.signupForm.get("password")?.value;
+      const confirmedPassword = this.signupForm.get('confirmPassword')?.value;
       const email = this.signupForm.get("email")?.value;
-      const newUser = {username, password,email};
-      console.error(newUser);
+      const newUser = {username, password, confirmedPassword, email};
+
+      console.log(newUser);
       // Assuming your UserService has a userRegister method
       this.userService.registerUser(newUser)
         .subscribe(
           (response) => {
+            console.log(" message = ",response);
             console.log(response.success)
-
+            this.statusMessage = response.message;
           },
           (error) => {
+            console.log("Error = ", error.error, " keys = ", error.keys)
+            this.statusMessage = error.error.message;
+            this.isSignupFailed = true; 
+
             // Handle an error response here, e.g., display an error message.
-            console.error('Signup failed:', error);
-            console.error("username = ", username);
+
           }
         );
     } else {
-      this.isSignupFailed = true; 
 
       console.log('Form is invalid. Please fix the errors.');
     }

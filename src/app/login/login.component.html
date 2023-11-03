@@ -16,6 +16,7 @@
       <button class="signup-button" (click) = "onSignup()">Sign up</button>
 
     </div>
+    <div class = "login-failed" *ngIf="isLoginFailed" ><p>{{loginStatus}}</p></div>
     <button class="form-group" type="submit" class="reddit-button" [disabled]="!loginForm.valid">Log In</button>
   </form>
 </div>

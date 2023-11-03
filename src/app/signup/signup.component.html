@@ -20,8 +20,8 @@
       <input type="password" id="confirmPassword" formControlName="confirmPassword" class="signup-input" placeholder="Confirm Password">
     </div>
     <button type="submit" [disabled]="signupForm.invalid" class="signup-button">Sign Up</button>
-    <div *ngIf="isSignupFailed">
-      <app-signup-failed-modal (closeModal)="closeModal()"></app-signup-failed-modal>
+    <div class = "signup-failed" *ngIf="isSignupFailed">
+      <p class = "signup-failed-text">{{statusMessage}}</p>
     </div>
   </form>
 </div>

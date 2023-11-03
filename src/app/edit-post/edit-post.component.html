@@ -3,14 +3,31 @@
     <h2>Edit Post</h2>
     <form>
       <div class="form-group">
-        <input type="text" id="title" [value]="titleValue" name="titleValue" (input)="onTitleChange($event)" placeholder="Title" >
+        <input
+          type="text"
+          id="title"
+          [value]="titleValue"
+          name="titleValue"
+          (input)="onTitleChange($event)"
+          placeholder="Title"
+        />
       </div>
       <div class="form-group">
-        <textarea id="content" [value]="contentValue" name="contentValue" (input)="onContentChange($event)" placeholder="Content"></textarea>
+        <textarea
+          id="content"
+          [value]="contentValue"
+          name="contentValue"
+          (input)="onContentChange($event)"
+          placeholder="Content"
+        ></textarea>
       </div>
       <div class="button-container">
-        <button type="button" (click)="saveEdits()" class="save-button">Save</button>
-        <button type="button" (click)="closeModal()" class="cancel-button">Cancel</button>
+        <button type="button" (click)="saveEdits()" class="save-button">
+          Save
+        </button>
+        <button type="button" (click)="closeModal()" class="cancel-button">
+          Cancel
+        </button>
       </div>
     </form>
   </div>
